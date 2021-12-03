@@ -34,7 +34,7 @@ def main(argv):
     if status == 'OFFLINE':
         # Device appears to be offline, restart it using smart switch
         logger.info('Device offline, restarting')
-        dev = kasa.SmartDevice(argv[2])
+        dev = kasa.SmartPlug(argv[2])
         asyncio.run(dev.update())
         asyncio.run(dev.turn_off())
         asyncio.run(dev.turn_on())
